@@ -1,3 +1,14 @@
+-- =====================================================
+-- Loja de Games - Script de criação do banco (PostgreSQL)
+-- Projeto Banco de Dados I - IFPB
+--
+-- Como usar:
+-- 1. Crie um banco vazio, por exemplo: CREATE DATABASE loja_games;
+-- 2. Conecte-se a ele e execute este script inteiro.
+-- Ele cria as 13 tabelas e cadastra as formas de pagamento.
+-- =====================================================
+
+
 create table cliente (
 	id_cliente serial primary key,
 	nome varchar(100) not null,
