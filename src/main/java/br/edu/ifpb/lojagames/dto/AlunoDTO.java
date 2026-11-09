@@ -1,4 +1,4 @@
-package br.edu.ifpb.academico.dto;
+package br.edu.ifpb.lojagames.dto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

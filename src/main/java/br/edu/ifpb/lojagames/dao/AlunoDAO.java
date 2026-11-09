@@ -1,4 +1,4 @@
-package br.edu.ifpb.academico.dao;
+package br.edu.ifpb.lojagames.dao;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifpb.academico.dto.AlunoDTO;
-import br.edu.ifpb.academico.model.Aluno;
+import br.edu.ifpb.lojagames.dto.AlunoDTO;
+import br.edu.ifpb.lojagames.model.Aluno;
 
 @Repository 
 public class AlunoDAO {

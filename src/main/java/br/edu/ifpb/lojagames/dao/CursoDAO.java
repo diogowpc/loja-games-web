@@ -1,4 +1,4 @@
-package br.edu.ifpb.academico.dao;
+package br.edu.ifpb.lojagames.dao;
 
 import java.sql.Date;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifpb.academico.model.Curso;
+import br.edu.ifpb.lojagames.model.Curso;
 
 @Repository 
 public class CursoDAO {

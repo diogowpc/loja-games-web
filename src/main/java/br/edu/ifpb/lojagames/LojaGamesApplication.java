@@ -1,13 +1,13 @@
-package br.edu.ifpb.academico;
+package br.edu.ifpb.lojagames;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class LojaGamesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(LojaGamesApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package br.edu.ifpb.academico.controller;
+package br.edu.ifpb.lojagames.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.edu.ifpb.academico.dao.CursoDAO;
-import br.edu.ifpb.academico.model.Curso;
+import br.edu.ifpb.lojagames.dao.CursoDAO;
+import br.edu.ifpb.lojagames.model.Curso;
 
 @Controller 
 @RequestMapping ("/cursos")

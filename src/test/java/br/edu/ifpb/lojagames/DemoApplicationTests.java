@@ -1,4 +1,4 @@
-package br.edu.ifpb.academico;
+package br.edu.ifpb.lojagames;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package br.edu.ifpb.academico.model;
+package br.edu.ifpb.lojagames.model;
 
 import java.time.LocalDate;
 

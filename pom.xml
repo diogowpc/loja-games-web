@@ -8,12 +8,12 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.edu.ifpb</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
-	<url/>
+   <groupId>br.edu.ifpb</groupId>
+   <artifactId>loja-games</artifactId>
+   <version>0.0.1-SNAPSHOT</version>
+   <name>loja-games</name>
+   <description>Aplicação web de loja de games com CRUDs de Cliente e Compra</description>
+   <url/>
 	<licenses>
 		<license/>
 	</licenses>
