@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Aluno</title>
+    <link th:href="@{/css/estiloPaginaForm.css}" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="container">
+        <h2>Cadastro</h2>
+        <form th:action="@{/alunos}" th:object="${aluno}" method="post">
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text"th:field="*{nome}">
+            </div>
+
+            <div class="form-group">
+                <label for="matricula">Matrícula:</label>
+                <input type="text"th:field="*{matricula}">
+            </div>
+
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" th:field="*{dataNascimento}">
+            </div>
+
+            <div class="form-group">
+                <label for="descricaoNecessidadeEspecifica">Descrição da necessidade específica:</label>
+                <textarea id="descricaoNecessidadeEspecifica" th:field="*{descricaoNecessidadeEspecifica}" rows="4" cols="50">
+                    
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Possui necessidade específica?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="possuiNecessidadeEspecifica" 
+                            th:field="*{possuiNecessidadeEspecifica}" value="true">SIM</label>
+                    <label><input type="radio" name="possuiNecessidadeEspecifica" 
+                            th:field="*{possuiNecessidadeEspecifica}" value="false" checked>NÃO</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="estado">Curso:</label>
+                <select id="curso" name="curso" th:field="*{idCurso}">
+                    <option value="0">Selecione o curso</option>
+                    
+                        <option th:each="curso : ${cursos}" th:value="${curso.id}" 
+                                th:text="|${curso.sigla} - ${curso.nome}|">
+                        </option>
+                  
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enviar">
+               
+                <a href="/alunos">
+                    <input type="button" value="Cancelar">
+                </a>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
