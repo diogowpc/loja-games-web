@@ -1,6 +1,3 @@
-drop schema public cascade;
-create schema public;
-
 create table cliente (
 	id_cliente serial primary key,
 	nome varchar(100) not null,
