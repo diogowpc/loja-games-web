@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Compras</title>
+    <link th:href="@{/css/estiloPaginaListagem.css}" rel="stylesheet" />
+</head>
+<body>
+    <a href="/" class="estiloBotaoLink">Voltar para Página Inicial</a>
+    &nbsp;
+    <a href="/compras/novo" class="estiloBotaoLink">Nova Compra</a>
+
+    <br /><br />
+
+    <div class="divMensagemSucesso" th:unless="${#strings.isEmpty(mensagemSucesso)}">
+        <span th:text="${mensagemSucesso}" />
+    </div>
+
+    <div class="divMensagemErro" th:unless="${#strings.isEmpty(mensagemErro)}">
+        <span th:text="${mensagemErro}" />
+    </div>
+
+    <h2>Listagem de Compras</h2>
+
+    <table class="tabela-listagem">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Cliente</th>
+                <th>Pagamento</th>
+                <th>Valor Total</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="compra : ${compras}">
+                <td th:text="${compra.idCompra}"></td>
+                <td th:text="${compra.dataVendaFormatada}"></td>
+                <td th:text="${compra.nomeCliente}"></td>
+                <td th:text="${compra.tipoPagamento}"></td>
+                <td th:text="${#numbers.formatDecimal(compra.valorTotal, 1, 'POINT', 2, 'COMMA')}"></td>
+                <td th:text="${compra.status}"></td>
+                <td>
+                    <a th:href="@{'/compras/editar/' + ${compra.idCompra}}" class="linkEditar">Editar</a>
+                    &nbsp;
+                    <a th:href="@{'/compras/excluir/' + ${compra.idCompra}}" class="linkExcluir">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

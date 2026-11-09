@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Compra</title>
+    <link th:href="@{/css/estiloPaginaForm.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Compra</h2>
+        <form th:action="@{/compras}" th:object="${compra}" method="post">
+
+            <div class="form-group">
+                <label for="idCliente">Cliente:</label>
+                <select th:field="*{idCliente}" required>
+                    <option value="">Selecione o cliente</option>
+                    <option th:each="cliente : ${clientes}" th:value="${cliente.idCliente}"
+                            th:text="|${cliente.nome} - ${cliente.cpf}|"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="idPagamento">Forma de pagamento:</label>
+                <select th:field="*{idPagamento}" required>
+                    <option value="">Selecione a forma de pagamento</option>
+                    <option th:each="forma : ${formasPagamento}" th:value="${forma.idPagamento}"
+                            th:text="${forma.tipo}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dataVenda">Data da venda:</label>
+                <input type="date" th:field="*{dataVenda}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="valorTotal">Valor total (R$):</label>
+                <input type="number" step="0.01" min="0" th:field="*{valorTotal}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select th:field="*{status}" required>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Paga">Paga</option>
+                    <option value="Cancelada">Cancelada</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enviar">
+                <a href="/compras">
+                    <input type="button" value="Cancelar">
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
